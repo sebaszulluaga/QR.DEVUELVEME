@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Device</title>
+</head>
+<body>
+    <h1>Register Your Device</h1>
+    <p>Device ID: {{codeId}}</p>
+    <form action="/register" method="post">
+        <input type="hidden" name="codeId" value="{{codeId}}">
+        <label>Owner Name: <input type="text" name="owner_name" required></label><br>
+        <label>Email: <input type="email" name="owner_email" required></label><br>
+        <label>Phone: <input type="tel" name="owner_phone"></label><br>
+        <label>Reward ($): <input type="number" name="reward"></label><br>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
