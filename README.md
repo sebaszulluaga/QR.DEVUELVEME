@@ -55,6 +55,16 @@ The server runs on port 3000 by default.
 
 ## Testing
 
+### Smoke Tests
+
+To run smoke tests that verify basic functionality:
+
+1. Ensure `curl` is installed on your system.
+2. Start the server on localhost:3000 (`npm run dev` or `npm start`).
+3. Run the smoke test script: `npm run test:smoke`
+
+This will test device registration, QR scan check, and report submission endpoints.
+
 ### Using curl scripts
 
 Run the test scripts in `scripts/` directory:
