@@ -104,6 +104,20 @@ npm run gen:qr ABC123 DEF456
 ```
 Expected: PNG files in /qrs/ directory.
 
+## QR Code Generation and Printing
+
+To generate and print QR codes for devices:
+
+1. Generate the QR codes:
+```bash
+npm run gen:qr ABC123 DEF456
+```
+
+2. Print the generated PNG files using your system's print command. For example, on Windows:
+```bash
+for %f in (qrs\*.png) do mspaint /pt "%f"
+```
+
 ### 6. List reports for device (internal, for testing)
 Not exposed via API, but can check database.
 
@@ -119,3 +133,14 @@ Not exposed via API, but can check database.
 - `public/`: Static files (HTML, JS, CSS)
 - `uploads/`: Uploaded photos
 - `qrs/`: Generated QR code images
+- `assets/`: Project assets including mockups and screenshots
+
+## Assets
+
+- `assets/mockup.png`: Placeholder mockup image (800x600 PNG with "QR-Return Mockup" text).
+
+To generate a demo screenshot of the index page:
+
+1. Start the server: `npm run dev`
+2. Open http://localhost:3000 in your browser.
+3. Use your browser's screenshot tool or a screen capture tool to save the page as an image (e.g., `screenshot.png`) in the `assets/` directory.

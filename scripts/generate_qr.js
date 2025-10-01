@@ -11,8 +11,8 @@ if (codeIds.length === 0) {
   process.exit(1);
 }
 
-const host = process.env.HOST_PROD || 'localhost:3000';
-const protocol = process.env.HOST_PROD ? 'https' : 'http';
+const host = process.env.HOST || 'localhost:3000';
+const protocol = process.env.HOST ? 'https' : 'http';
 const qrsDir = path.join(__dirname, '..', 'qrs');
 
 // Ensure qrs directory exists
