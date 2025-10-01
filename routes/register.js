@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const { createDevice } = require('../db/db');
 const { sendRegistrationEmail } = require('../src/email');
 
@@ -24,12 +25,14 @@ router.post('/register', async (req, res) => {
   }
 
   // Basic sanitization (trim and escape)
+  const dashboard_token = crypto.randomBytes(12).toString('hex');
   const sanitized = {
     id: codeId.trim(),
     owner_name: owner_name.trim().replace(/[<>\"']/g, ''),
     owner_email: owner_email.trim(),
     owner_phone: owner_phone ? owner_phone.trim() : null,
-    reward: reward ? parseInt(reward) || 0 : 0
+    reward: reward ? parseInt(reward) || 0 : 0,
+    dashboard_token: dashboard_token
   };
 
   try {
@@ -49,7 +52,8 @@ router.post('/register', async (req, res) => {
       const html = data
         .replace(/{{codeId}}/g, sanitized.id)
         .replace(/{{owner_name}}/g, sanitized.owner_name)
-        .replace(/{{owner_email}}/g, sanitized.owner_email);
+        .replace(/{{owner_email}}/g, sanitized.owner_email)
+        .replace(/{{dashboard_token}}/g, sanitized.dashboard_token);
       res.send(html);
     });
   } catch (error) {

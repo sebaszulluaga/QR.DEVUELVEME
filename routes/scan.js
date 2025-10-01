@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { getDevice } = require('../db/db');
+const { getDevice, listReports } = require('../db/db');
 
 const router = express.Router();
 
@@ -32,6 +32,21 @@ router.get('/scan/:codeId', (req, res) => {
       res.send(html);
     });
   }
+});
+
+// GET /dashboard/:codeId?token=TOKEN
+router.get('/dashboard/:codeId', (req, res) => {
+  const { codeId } = req.params;
+  const { token } = req.query;
+
+  const device = getDevice(codeId);
+
+  if (!device || device.dashboard_token !== token) {
+    return res.status(403).json({ error: 'Invalid token or device not found' });
+  }
+
+  const reports = listReports(codeId);
+  res.json({ reports });
 });
 
 module.exports = router;

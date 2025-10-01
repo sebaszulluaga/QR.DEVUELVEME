@@ -12,7 +12,7 @@ db.exec(initSQL);
 
 // Prepare statements
 const getDeviceStmt = db.prepare('SELECT * FROM devices WHERE id = ?');
-const createDeviceStmt = db.prepare('INSERT INTO devices (id, owner_name, owner_email, owner_phone, reward, registered_at) VALUES (?, ?, ?, ?, ?, datetime(\'now\'))');
+const createDeviceStmt = db.prepare('INSERT INTO devices (id, owner_name, owner_email, owner_phone, reward, registered_at, dashboard_token) VALUES (?, ?, ?, ?, ?, datetime(\'now\'), ?)');
 const saveReportStmt = db.prepare('INSERT INTO reports (device_id, finder_name, finder_contact, finder_photo_path, latitude, longitude, ip, email_sent) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
 const updateEmailSentStmt = db.prepare('UPDATE reports SET email_sent = ? WHERE id = ?');
 const listReportsStmt = db.prepare('SELECT * FROM reports WHERE device_id = ? ORDER BY created_at DESC');
@@ -22,8 +22,8 @@ function getDevice(id) {
   return getDeviceStmt.get(id);
 }
 
-function createDevice({ id, owner_name, owner_email, owner_phone, reward }) {
-  return createDeviceStmt.run(id, owner_name, owner_email, owner_phone, reward);
+function createDevice({ id, owner_name, owner_email, owner_phone, reward, dashboard_token }) {
+  return createDeviceStmt.run(id, owner_name, owner_email, owner_phone, reward, dashboard_token);
 }
 
 function saveReport({ device_id, finder_name, finder_contact, finder_photo_path, latitude, longitude, ip, email_sent = 0 }) {

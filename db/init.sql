@@ -5,7 +5,8 @@ CREATE TABLE IF NOT EXISTS devices (
   owner_email TEXT,
   owner_phone TEXT,
   reward INTEGER,
-  registered_at DATETIME
+  registered_at DATETIME,
+  dashboard_token TEXT
 );
 
 -- reports
