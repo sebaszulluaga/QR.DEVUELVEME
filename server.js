@@ -32,13 +32,13 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+// Apply multer to /report route
+app.use('/report', upload.single('photo'));
+
 // Routes
 app.use('/scan', scanRoutes);
 app.use('/', registerRoutes);
 app.use('/', reportRoutes);
-
-// Apply multer to /report route
-app.use('/report', upload.single('photo'));
 
 // Start server
 app.listen(PORT, () => {

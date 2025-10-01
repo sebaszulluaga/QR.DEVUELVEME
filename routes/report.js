@@ -13,7 +13,7 @@ router.post('/report', async (req, res) => {
 
   // Validate required fields
   if (!photo || !finder_contact) {
-    return res.status(400).send('Missing required fields: photo and finder_contact');
+    return res.status(400).send('<html><body><h1>Error</h1><p>Missing required fields: photo and finder_contact</p></body></html>');
   }
 
   // Basic sanitization
@@ -58,13 +58,13 @@ router.post('/report', async (req, res) => {
     // Respond with thank you page
     fs.readFile(path.join(__dirname, '..', 'views', 'report_thankyou.html'), 'utf8', (err, data) => {
       if (err) {
-        return res.status(500).send('Error loading thank you page');
+        return res.status(500).send('<html><body><h1>Error</h1><p>Error loading thank you page</p></body></html>');
       }
       res.send(data);
     });
   } catch (error) {
     console.error('Error submitting report:', error);
-    res.status(500).send('Error submitting report.');
+    res.status(500).send('<html><body><h1>Error</h1><p>Error submitting report.</p></body></html>');
   }
 });
 

@@ -14,7 +14,7 @@ router.get('/scan/:codeId', (req, res) => {
     // Device exists, show registered form
     fs.readFile(path.join(__dirname, '..', 'views', 'scan_registered.html'), 'utf8', (err, data) => {
       if (err) {
-        return res.status(500).send('Error loading page');
+        return res.status(500).send('<html><body><h1>Error</h1><p>Error loading page</p></body></html>');
       }
       const html = data
         .replace(/{{codeId}}/g, codeId)
@@ -26,7 +26,7 @@ router.get('/scan/:codeId', (req, res) => {
     // Device not registered, show registration form
     fs.readFile(path.join(__dirname, '..', 'views', 'scan_unregistered.html'), 'utf8', (err, data) => {
       if (err) {
-        return res.status(500).send('Error loading page');
+        return res.status(500).send('<html><body><h1>Error</h1><p>Error loading page</p></body></html>');
       }
       const html = data.replace(/{{codeId}}/g, codeId);
       res.send(html);

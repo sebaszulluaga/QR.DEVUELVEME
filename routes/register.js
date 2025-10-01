@@ -12,7 +12,7 @@ router.post('/register', async (req, res) => {
 
   // Validate required fields
   if (!codeId || !owner_name || !owner_email) {
-    return res.status(400).send('Missing required fields: codeId, owner_name, owner_email');
+    return res.status(400).send('<html><body><h1>Error</h1><p>Missing required fields: codeId, owner_name, owner_email</p></body></html>');
   }
 
   // Basic sanitization (trim and escape)
@@ -36,7 +36,7 @@ router.post('/register', async (req, res) => {
     // Respond with confirmation page
     fs.readFile(path.join(__dirname, '..', 'views', 'register_confirmation.html'), 'utf8', (err, data) => {
       if (err) {
-        return res.status(500).send('Error loading confirmation page');
+        return res.status(500).send('<html><body><h1>Error</h1><p>Error loading confirmation page</p></body></html>');
       }
       const html = data
         .replace(/{{codeId}}/g, sanitized.id)
@@ -46,7 +46,7 @@ router.post('/register', async (req, res) => {
     });
   } catch (error) {
     console.error('Error registering device:', error);
-    res.status(500).send('Error registering device.');
+    res.status(500).send('<html><body><h1>Error</h1><p>Error registering device.</p></body></html>');
   }
 });
 
