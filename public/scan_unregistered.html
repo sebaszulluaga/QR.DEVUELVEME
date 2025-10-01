@@ -8,7 +8,8 @@
 <body>
     <h1>Register Your Device</h1>
     <p>Device ID: {{codeId}}</p>
-    <form action="/register" method="post">
+    <div id="register-status" class="status-message"></div>
+    <form action="/register" method="post" onsubmit="return validateRegisterForm()">
         <input type="hidden" name="codeId" value="{{codeId}}">
         <label>Owner Name: <input type="text" name="owner_name" required></label><br>
         <label>Email: <input type="email" name="owner_email" required></label><br>
@@ -16,5 +17,6 @@
         <label>Reward ($): <input type="number" name="reward"></label><br>
         <button type="submit">Register</button>
     </form>
+    <script src="/js/app.js"></script>
 </body>
 </html>

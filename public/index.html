@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QR-Return</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta property="og:title" content="QR-Return">
+  <meta property="og:description" content="Scan QR codes on device cases to register or report found items.">
+  <meta property="og:image" content="favicon.png">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -23,7 +29,8 @@
     </section>
     <section>
       <h2>Test It</h2>
-      <form action="/scan/" method="get" onsubmit="appendCode()">
+      <div id="scan-status" class="status-message"></div>
+      <form action="/scan/" method="get" onsubmit="return handleScanSubmit()">
         <label>Enter Device Code: <input type="text" id="codeId" required></label>
         <button type="submit">Scan</button>
       </form>
