@@ -47,6 +47,13 @@ For email functionality, configure the following environment variables:
 
 The server runs on port 3000 by default.
 
+## Demo
+
+To run a demo of the application:
+
+1. Start the server: `npm start`
+2. Open http://localhost:3000 in your browser.
+
 ## API Endpoints
 
 - `GET /scan/:codeId`: Returns HTML form for registration (if device not registered) or reporting (if registered).
