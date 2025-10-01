@@ -16,6 +16,11 @@ router.post('/report', async (req, res) => {
     return res.status(400).send('<html><body><h1>Error</h1><p>Missing required fields: photo and finder_contact</p></body></html>');
   }
 
+  // Enforce length limits
+  if (finder_contact && finder_contact.length > 200) {
+    return res.status(400).send('<html><body><h1>Error</h1><p>finder_contact exceeds 200 characters</p></body></html>');
+  }
+
   // Basic sanitization
   const sanitized = {
     device_id: codeId.trim(),

@@ -15,6 +15,14 @@ router.post('/register', async (req, res) => {
     return res.status(400).send('<html><body><h1>Error</h1><p>Missing required fields: codeId, owner_name, owner_email</p></body></html>');
   }
 
+  // Enforce length limits
+  if (owner_name && owner_name.length > 100) {
+    return res.status(400).send('<html><body><h1>Error</h1><p>owner_name exceeds 100 characters</p></body></html>');
+  }
+  if (reward && reward.length > 500) {
+    return res.status(400).send('<html><body><h1>Error</h1><p>reward exceeds 500 characters</p></body></html>');
+  }
+
   // Basic sanitization (trim and escape)
   const sanitized = {
     id: codeId.trim(),
