@@ -51,4 +51,4 @@ qr-return/
 11. public/css/styles.css
 12. .env.example
 13. (data.db will be created at runtime)
-# Checkpoint before audit
+# Checkpoint: ready-for-demo
