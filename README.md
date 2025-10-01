@@ -18,6 +18,28 @@ A simple web application for returning lost devices using QR codes on cases. Own
 
 2. The SQLite database `data.db` will be created automatically on first run.
 
+## Email Configuration for Testing
+
+For email functionality, configure the following environment variables:
+
+- **Mailtrap** (recommended for testing):
+  - `SMTP_SERVICE`: Mailtrap
+  - `EMAIL_HOST`: smtp.mailtrap.io
+  - `EMAIL_PORT`: 2525
+  - `EMAIL_USER`: Your Mailtrap username
+  - `EMAIL_PASS`: Your Mailtrap password
+  - `EMAIL_FROM`: Your from email (optional)
+
+- **Gmail**:
+  - `SMTP_SERVICE`: gmail
+  - `EMAIL_USER`: yourgmail@gmail.com
+  - `EMAIL_PASS`: Your Gmail app password (not regular password)
+  - `EMAIL_FROM`: Your from email (optional)
+
+- **Console Fallback** (for development without email setup):
+  - Leave `EMAIL_USER` and `EMAIL_PASS` unset.
+  - Emails will be logged to the console instead of being sent, preventing request blocking.
+
 ## Running the Application
 
 - Development: `npm run dev`
