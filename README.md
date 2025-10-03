@@ -1,3 +1,7 @@
+Welcome to QR.DEVULEVEME
+
+link to see how it works locally.: https://drive.google.com/drive/folders/149hgZRVFdczQch1kNTbJ0T7UkYApe6bE?usp=sharing
+
 # QR-Return MVP
 
 A simple web application for returning lost devices using QR codes on cases. Owners can register their devices, and finders can report them with photos and location.
