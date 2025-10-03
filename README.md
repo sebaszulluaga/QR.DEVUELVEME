@@ -3,7 +3,7 @@ Welcome to QR.DEVULEVEME
 link to see how it works locally.: https://drive.google.com/drive/folders/149hgZRVFdczQch1kNTbJ0T7UkYApe6bE?usp=sharing
 # 🚀 QR-Return - Encuentra tus dispositivos perdidos
 
-![QR-Return Banner](https://via.placeholder.com/800x200?text=QR-Return+MVP)
+![Imagen de ejemplo](https://github.com/sebaszulluaga/QR.DEVUELVEME/raw/main/Image%20Oct%202%2C%202025%2C%2008_59_55%20PM.png)
 
 ---
 
