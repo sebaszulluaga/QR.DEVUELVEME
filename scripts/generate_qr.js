@@ -32,8 +32,10 @@ const promises = codeIds.map(async (codeId) => {
   }
 });
 
-Promise.all(promises).then(() => {
-  console.log('All QR codes generated.');
-}).catch((err) => {
-  console.error('Error in generating QRs:', err);
-});
+Promise.all(promises)
+  .then(() => {
+    console.log('All QR codes generated.');
+  })
+  .catch((err) => {
+    console.error('Error in generating QRs:', err);
+  });

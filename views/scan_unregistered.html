@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Device</title>
+    <link rel="stylesheet" href="/css/styles.css">
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         form { max-width: 400px; }
@@ -13,16 +14,16 @@
     </style>
 </head>
 <body>
-    <h1>Registrar propietario</h1>
-    <p>Registra tu dispositivo para que puedas recuperarlo si se pierde.</p>
+    <h1>Register Owner</h1>
+    <p>Register your device so you can recover it if lost.</p>
     <form action="/register" method="post">
         <input type="hidden" name="codeId" value="{{codeId}}">
-        <label>Nombre del propietario: <input type="text" name="owner_name" required></label>
+        <label>Owner's name: <input type="text" name="owner_name" required></label>
         <label>Email: <input type="email" name="owner_email" required></label>
-        <label>Teléfono: <input type="tel" name="owner_phone"></label>
-        <label>Recompensa ($): <input type="number" name="reward" value="20"></label>
-        <button type="submit">Registrar</button>
+        <label>Phone: <input type="tel" name="owner_phone"></label>
+        <label>Reward ($): <input type="number" name="reward" value="20"></label>
+        <button type="submit">Register</button>
     </form>
-    <p><small>Tu información se utilizará únicamente para contactarte si alguien encuentra tu dispositivo. No compartiremos tus datos con terceros.</small></p>
+    <p><small>Your information will be used only to contact you if someone finds your device. We will not share your data with third parties.</small></p>
 </body>
 </html>

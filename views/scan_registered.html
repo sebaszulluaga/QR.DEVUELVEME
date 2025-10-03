@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Found Device</title>
+    <link rel="stylesheet" href="/css/styles.css">
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         .form-section { display: none; max-width: 400px; }
@@ -14,24 +15,24 @@
     </style>
 </head>
 <body>
-    <h1>Reportar dispositivo encontrado</h1>
-    <p>Dispositivo ID: {{codeId}}</p>
-    <p>Propietario: {{owner_name}}</p>
-    <p>Recompensa: ${{reward}}</p>
-    <button class="return-btn" onclick="startReturn()">Devolver dispositivo</button>
+    <h1>Report Found Device</h1>
+    <p>Device ID: {{codeId}}</p>
+    <p>Owner: {{owner_name}}</p>
+    <p>Reward: ${{reward}}</p>
+    <button class="return-btn" onclick="startReturn()">Return Device</button>
 
     <div id="form-section" class="form-section">
-        <h2>Información del encontrador</h2>
+        <h2>Finder's Information</h2>
         <form action="/report" method="post" enctype="multipart/form-data">
             <input type="hidden" name="codeId" value="{{codeId}}">
             <input type="hidden" id="latitude" name="latitude">
             <input type="hidden" id="longitude" name="longitude">
-            <label>Tu nombre: <input type="text" name="finder_name" required></label>
-            <label>Contacto (email o teléfono): <input type="text" name="finder_contact" required></label>
-            <label>Foto del dispositivo: <input type="file" name="photo" accept="image/*" required></label>
-            <button type="submit">Enviar reporte</button>
+            <label>Your name: <input type="text" name="finder_name" required></label>
+            <label>Contact (email or phone): <input type="text" name="finder_contact" required></label>
+            <label>Photo of the device: <input type="file" name="photo" accept="image/*" required></label>
+            <button type="submit">Send Report</button>
         </form>
-        <p><small>La foto y el contacto son obligatorios. Tu información se compartirá únicamente con el propietario del dispositivo para coordinar la devolución.</small></p>
+        <p><small>The photo and contact are mandatory. Your information will be shared only with the device owner to coordinate the return.</small></p>
     </div>
 
     <script>
@@ -42,11 +43,11 @@
                     document.getElementById('longitude').value = position.coords.longitude;
                     document.getElementById('form-section').style.display = 'block';
                 }, function(error) {
-                    alert('No se pudo obtener la ubicación. Procediendo sin ella.');
+                    alert('Could not get location. Proceeding without it.');
                     document.getElementById('form-section').style.display = 'block';
                 });
             } else {
-                alert('Geolocalización no soportada. Procediendo sin ubicación.');
+                alert('Geolocation not supported. Proceeding without location.');
                 document.getElementById('form-section').style.display = 'block';
             }
         }

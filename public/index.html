@@ -3,39 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QR-Return</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <meta property="og:title" content="QR-Return">
-  <meta property="og:description" content="Scan QR codes on device cases to register or report found items.">
-  <meta property="og:image" content="favicon.png">
-  <meta property="og:url" content="https://yourdomain.com">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="css/styles.css">
+  <title>QR-Return Demo</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+    h1, h2 { text-align: center; }
+    .button { display: block; padding: 12px 20px; margin: 12px 0; background: #2b6cb0; color: white; text-align: center; border-radius: 8px; text-decoration: none; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>QR-Return</h1>
-    <p>Scan QR codes on device cases to register or report found items.</p>
-  </header>
-  <main>
-    <section>
-      <h2>How it works</h2>
-      <ol>
-        <li>Scan the QR code on the device case.</li>
-        <li>If not registered, register your device with contact info.</li>
-        <li>If registered, report it as found with photo and location.</li>
-        <li>The owner will be notified via email.</li>
-      </ol>
-    </section>
-    <section>
-      <h2>Test It</h2>
-      <div id="scan-status" class="status-message"></div>
-      <form action="/scan/" method="get" onsubmit="return handleScanSubmit()">
-        <label>Enter Device Code: <input type="text" id="codeId" required></label>
-        <button type="submit">Scan</button>
-      </form>
-    </section>
-  </main>
-  <script src="js/app.js"></script>
+
+<h1>QR-Return</h1>
+<p style="text-align:center;">Protect your devices and recover them easily</p>
+
+<h2>Quick MVP test</h2>
+
+<a href="/scan/new" class="button">Register a device (TEST123)</a>
+<a href="/scan/TEST123" class="button">Report found device (TEST123)</a>
+
+<p style="text-align:center; font-size:0.9rem; color:#666;">
+  For the demo, just click the buttons.
+</p>
+
 </body>
 </html>

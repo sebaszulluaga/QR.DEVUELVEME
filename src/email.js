@@ -12,15 +12,15 @@ if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       },
     };
   } else {
-     transporterConfig = {
-       host: process.env.EMAIL_HOST,
-       port: process.env.EMAIL_PORT,
-       secure: process.env.EMAIL_PORT == 465, // use == for string comparison
-       auth: {
+    transporterConfig = {
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT,
+      secure: process.env.EMAIL_PORT == 465, // use == for string comparison
+      auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
-       },
-     };
+      },
+    };
   }
   transporter = nodemailer.createTransport(transporterConfig);
 }
@@ -52,7 +52,15 @@ function sendRegistrationEmail(to, data) {
 
 function sendReportEmail(to, data) {
   return new Promise((resolve, reject) => {
-    const { device, finder_name, finder_contact, photoUrl, location, ip, timestamp } = data;
+    const {
+      device,
+      finder_name,
+      finder_contact,
+      photoUrl,
+      location,
+      ip,
+      timestamp,
+    } = data;
 
     const mailOptions = {
       from: process.env.EMAIL_FROM || process.env.EMAIL_USER,

@@ -3,7 +3,7 @@
 # Smoke test script for the application
 # Assumes server is running on localhost:3000
 
-BASE_URL="http://localhost:3000"
+BASE_URL="http://localhost:3001"
 TEST_CODE_ID="test123"
 
 echo "Running smoke tests..."
