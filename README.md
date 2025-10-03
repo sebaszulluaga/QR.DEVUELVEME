@@ -1,6 +1,55 @@
 Welcome to QR.DEVULEVEME
 
 link to see how it works locally.: https://drive.google.com/drive/folders/149hgZRVFdczQch1kNTbJ0T7UkYApe6bE?usp=sharing
+# 🚀 QR-Return - Encuentra tus dispositivos perdidos
+
+![QR-Return Banner](https://via.placeholder.com/800x200?text=QR-Return+MVP)
+
+---
+
+### 🔹 ¿Qué es QR-Return?
+QR-Return es un **sistema inteligente de recuperación de dispositivos** que usa **QR codes** en fundas o estuches para registrar o reportar objetos perdidos como laptops o celulares.  
+
+---
+
+### 🔹 ¿Cómo funciona?
+1. 📱 **Escanea el QR** del estuche del dispositivo.  
+2. 📝 Si el dispositivo no está registrado → **regístralo** con tu nombre, correo y recompensa.  
+3. 👀 Si alguien encuentra el dispositivo → **reporta** con foto y ubicación.  
+4. 📧 El dueño recibe la información y puede contactar al hallador.  
+
+---
+
+### 🔹 Características
+- Registro rápido de dispositivos  
+- Reporte de hallazgos con foto y ubicación  
+- Notificaciones automáticas al dueño  
+- Dashboard seguro para ver reportes  
+- Recompensa definida por el dueño  
+
+---
+
+### 🔹 Demo
+- Registra un dispositivo con el QR `TEST123`.  
+- Reporta un hallazgo y verifica que el dueño reciba la foto y ubicación.  
+- URL demo (local): `http://localhost:3000`  
+- Pronto online: [Tu dominio aquí]  
+
+---
+
+### 🔹 Tecnologías
+- Node.js, Express, SQLite  
+- HTML/CSS/JS para frontend  
+- Multer para manejo de fotos  
+- Nodemailer para notificaciones por correo  
+
+---
+
+### 🔹 Contacto
+- 🧑 Owner: SebasZulluaga  
+- ✉️ Email: zurzulu@hotmail.com  
+
+---
 
 # QR-Return MVP
 
